@@ -1,0 +1,15 @@
+<form
+  class="{{class}}"
+  action="{{submit_to}}" 
+  method="post"
+  autocomplete="{{autocomplete|default:'off'}}"
+>
+  {% csrf_token %}
+  <div class="form-fields">{{form.as_p}}</div>
+  <div class="form-buttons">
+    {% if cancel %}
+    {% include 'generic/redirect.html' with to=cancel text=cancel_text|default:'Cancel' %}
+    {% endif %}
+    <input type="submit" value="{{submit_text|default:'Submit'}}">
+  </div>
+</form>

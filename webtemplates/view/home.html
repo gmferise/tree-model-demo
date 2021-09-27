@@ -1,0 +1,37 @@
+{% extends 'view/base.html' %}
+{% load mptt_tags %}
+
+{% block main %}
+<div class="file-tree">
+  <h1>My Dox</h1>
+  {% recursetree nodes %}
+
+  {% if node.id == root.id %}
+    {% if node.is_root_node %}
+      {% include 'generic/redirect.html' with to='create_folder' param=node.id text='📁' tip='Add Folder' class='button-like' %}
+      {% include 'generic/redirect.html' with to='create_file' param=node.id text='📄' tip='Add File' class='button-like' %}
+    {% endif %}
+    <ul class="treenode-list">{{ children }}</ul>
+  {% endif %}
+
+  {% if not node.is_root_node %}
+    <li class="treenode">
+      {% if not node.is_file %}
+      {% if not node.is_leaf_node %}<div class="treenode-header">{% else %}<div>{% endif %}
+        <span id="{{node.id}}" class="treenode-name">{{ node.name }}</span>
+        {% include 'generic/redirect.html' with to='create_folder' param=node.id text='📁' tip='Add Folder' class='button-like' %}
+        {% include 'generic/redirect.html' with to='create_file' param=node.id text='📄' tip='Add File' class='button-like' %}
+      </div>
+      <ul class="treenode-list">{{ children }}</ul>
+      {% else %}
+      <div>
+        <span id="{{node.id}}" class="treenode-name">{{ node.name }}</span>
+      </div>
+      {% endif %}
+      
+    </li>
+  {% endif %}
+
+  {% endrecursetree %}
+</div>
+{% endblock main %}

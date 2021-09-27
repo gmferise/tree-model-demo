@@ -1,0 +1,6 @@
+{% extends 'view/base.html' %}
+
+{% block main %}
+  <h1>{{title}}</h1>
+  {% include 'generic/form.html' with form=form submit_text=submit_text %}
+{% endblock main %}

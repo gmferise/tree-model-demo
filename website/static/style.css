@@ -1,0 +1,165 @@
+:root {
+  --bg: white;
+  --fg: black;
+  --fg-dim: #888888;
+  --bg-light: #efefef;
+  --hover: #dddddd;
+  --tag: rgb(0, 127, 231);
+  --tag-hover: rgb(0, 212, 231);
+  --alert: rgb(231, 0, 0);
+}
+
+* {
+  font-family: 'Consolas', sans-serif, monospace;
+}
+
+h1, h4 {
+  margin-top: 0em;
+  text-align: center;
+}
+
+main {
+  margin: 0;
+  width: 50vw;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+main > * {
+  width: 100%;
+}
+
+nav {
+  margin-bottom: 2em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+}
+
+nav div {
+  margin-bottom: 1em;
+}
+
+aside {
+  width: 20vw;
+  display: inline-flex;
+  flex-flow: column nowrap;
+  border: 3px solid var(--fg);
+  border-radius: 5px;
+  padding: 1em;
+  margin-right: 1em;
+}
+
+aside:empty {
+  border: 3px solid transparent;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+h1, h2, h3 {
+  color: var(--fg);
+}
+
+textarea {
+  vertical-align: top;
+}
+
+form {
+  border: 3px solid var(--fg);
+  border-radius: 5px;
+  padding: 1em;
+  width: max-content;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.2em;
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+button,
+a.button-like,
+input[type="button"],
+input[type="submit"] {
+  font-size: 16px;
+  margin-bottom: 0.5em;
+  background-color: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  border-radius: 5px;
+  outline: none;
+}
+
+select,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  width: 32ch;
+  margin: 0 10px 1em 0;
+}
+
+textarea {
+  width: 35ch;
+  word-wrap: break-word;
+  resize: none;
+}
+
+a.button-like {
+  color: var(--fg);
+  text-decoration: none;
+  padding: 2px 6px;
+}
+
+button:hover,
+a.button-like:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background-color: var(--hover);
+}
+
+ul.errorlist {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.errorlist li {
+  color: var(--alert);
+  text-align: center;
+}
+
+.treenode, .file-tree {
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+
+  background-color: hsla(10, 60%, 45%, 45%);
+
+}
+
+.treenode-name {
+  display: inline-block;
+  overflow-x: auto;
+  max-width: 100%;
+  vertical-align: text-bottom;
+}
+
+.treenode-header {
+  margin-bottom: 0.5em;
+}
+
+ul.treenode-list {
+  list-style-type: none;
+  padding-left: 0.5em;
+}
+

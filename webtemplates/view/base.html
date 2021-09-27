@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel='stylesheet' href={% static 'style.css' %} />
+  <title>Bop Dox</title>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      {% if user.is_authenticated %}
+      {% include 'generic/redirect.html' with to='home' text='Home' class='button-like' %}
+      {% else %}
+      {% include 'generic/redirect.html' with to='signup' text='Signup' class='button-like' %}
+      {% endif %}
+    </div>
+    <div class="nav-right">
+      {% if user.is_authenticated %}
+      <span>Logged in as <b>{{user.username}}</b></span>
+      {% include 'generic/redirect.html' with to='logout' text='Logout' class='button-like' %}
+      {% else %}
+      {% include 'generic/redirect.html' with to='login' text='Login' class='button-like' %}
+      {% endif %}
+    </div>
+  </nav>
+  <aside>{% block aside %}{% endblock aside %}</aside>
+  <main>{% block main %}{% endblock main %}</main>
+</body>
+</html>
