@@ -51,3 +51,30 @@ Submit a link to your GitHub repo.
 ```
 https://github.com/kenzie-se-q4/hierarchical-data-and-you-<github_username>/
 ```
+
+# About the App (BopDox)
+A basic application to practice the use of MPTT models.
+
+It imitates a file structure and allows multiple users to store their "files" separately on the website (you can't upload real files).
+
+Only folders can have children, and both files and folders can be children.
+
+The TreeNode model in the admin panel has drag-and-drop functionality which lets you move files/folders around. You can even move them between users!
+
+Regular users can only add files/folders via the interface on the homepage.
+
+# Installation & Usage
+Using the [poetry](https://python-poetry.org/) package manager:
+```
+poetry install
+poetry shell
+python manage.py runserver
+```
+
+Navigate to `localhost:8000` in the browser to view the application.
+
+There is some pre-loaded data the sqlite database, use these users to look around:
+| Username | Password | Is Staff? |
+| :------- | :------- | :-------- |
+| admin    | 123      | Yes       |
+| other    | user     | No        |
