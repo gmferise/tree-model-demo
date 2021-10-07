@@ -19,6 +19,8 @@ python manage.py runserver
 
 Navigate to `localhost:8000` in the browser to view the application.
 
+You can visit the admin panel at `localhost:8000/admin/` to manually edit the models.
+
 There is some pre-loaded data the sqlite database, use these users to look around:
 | Username | Password | Is Staff? |
 | :------- | :------- | :-------- |
